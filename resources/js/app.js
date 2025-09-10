@@ -31,3 +31,27 @@ window.initQuill = function (selector, hiddenInputId) {
 
     return quill;
 }
+
+// buat floating button untuk id = "floating-button"
+const floatingButton = document.getElementById('floating-button');
+if (floatingButton) {
+    const buttonSize = 40; // ukuran tombol dalam piksel
+    const margin = 17; // jarak dari tepi layar dalam piksel
+
+    function updateButtonPosition() {
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+
+        floatingButton.style.position = 'fixed';
+        floatingButton.style.width = `${buttonSize}px`;
+        floatingButton.style.height = `${buttonSize}px`;
+        floatingButton.style.bottom = `${margin}px`;
+        floatingButton.style.right = `${margin}px`;
+    }
+
+    // Panggil fungsi untuk mengatur posisi awal
+    updateButtonPosition();
+
+    // Perbarui posisi tombol saat jendela diubah ukurannya
+    window.addEventListener('resize', updateButtonPosition);
+}
