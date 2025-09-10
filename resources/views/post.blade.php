@@ -41,7 +41,7 @@
               {{ $post->title }}
             </h1>
           </header>
-          <p class="lead">{{ $post->content }}</p>
+          <p class="lead">{!! $post->content !!}</p>
         </article>
       </div>
     </main>
