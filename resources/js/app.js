@@ -13,8 +13,11 @@ window.initQuill = function (selector, hiddenInputId) {
             toolbar: [
                 [{ header: [1, 2, 3, false] }],
                 ['bold', 'italic', 'underline', 'strike'],
-                [{ list: 'ordered' }, { list: 'bullet' }],
-                ['link', 'blockquote', 'code-block', 'image'],
+                [{ color: [] }, { background: [] }],
+                ['link', 'image', 'video'],
+                [{ indent: '-1' }, { indent: '+1' }, { align: [] }],
+                [{ list: 'ordered' }, { list: 'bullet' },],
+                ['code-block', 'blockquote', 'formula'],
                 ['clean']
             ]
         }
