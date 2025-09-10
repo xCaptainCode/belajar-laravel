@@ -14,8 +14,8 @@
               <label for="search" class="hidden mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email
                 address lorem</label>
               <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                  width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                   <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
                     d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
                 </svg>
@@ -58,7 +58,7 @@
                 <a href="/posts/{{ $post->slug }}">{{ $post->title }}</a>
               </h2>
               <p class="mb-5 font-light text-gray-500 dark:text-gray-400">
-                {{ Str::limit($post['content'], 150) }}
+                {!! Str::limit($post['content'], 150) !!}
               </p>
               <div class="flex justify-between items-center">
                 <a href="/posts?author={{ $post->author->name }}">
@@ -78,7 +78,9 @@
           @empty
             <div class="text-center col-span-3 space-y-3">
               <p class="text-center text-2xl font-bold text-gray-900 dark:text-white">No post found!</p>
-              <a href="/posts" class="text-sm font-medium text-primary-600 dark:text-primary-500 hover:underline">&laquo; Back to all posts</a>
+              <a href="/posts"
+                class="text-sm font-medium text-primary-600 dark:text-primary-500 hover:underline">&laquo; Back to all
+                posts</a>
             </div>
           @endforelse
         </div>
@@ -86,5 +88,14 @@
       </div>
     </section>
 
+    <a href="{{ route('posts.create') }}" id="floating-button" type="button"
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-3 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+      <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+        width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M5 12h14m-7 7V5" />
+      </svg>
+      <span class="sr-only">Icon description</span>
+    </a>
 
 </x-layout>
